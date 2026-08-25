@@ -30,3 +30,31 @@ jobs:
         with:
           name: sky-hopper-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+
+  capture-crash-log:
+    needs: build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download APK
+        uses: actions/download-artifact@v4
+        with:
+          name: sky-hopper-apk
+
+      - name: Run app on emulator and capture logcat
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 33
+          script: |
+            adb logcat -c
+            adb install app-debug.apk
+            adb shell am start -n com.skyhopper.utsavgamingstudio/.MainActivity
+            sleep 15
+            adb logcat -d > logcat_output.txt
+
+      - name: Upload logcat
+        uses: actions/upload-artifact@v4
+        with:
+          name: crash-logcat
+          path: logcat_output.txt
