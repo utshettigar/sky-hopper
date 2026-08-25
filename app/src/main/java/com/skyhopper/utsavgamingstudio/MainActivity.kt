@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        enableFullScreenMode()
         MobileAds.initialize(this) { }
 
         rootLayout = LinearLayout(this).apply {
@@ -59,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             )
         }
         setContentView(rootLayout)
+        enableFullScreenMode()
 
         if (isInternetAvailable()) {
             showWebViewContent()
