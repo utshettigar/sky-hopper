@@ -12,9 +12,9 @@
         android:theme="@style/Theme.SkyHopper"
         android:usesCleartextTraffic="false">
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
+<meta-data
+    android:name="com.google.android.gms.ads.APPLICATION_ID"
+    android:value="ca-app-pub-8898717507085919~7299574894" />
 
         <activity
             android:name=".MainActivity"
