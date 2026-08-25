@@ -45,7 +45,10 @@ jobs:
       - name: Run app on emulator and capture logcat
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 33
+          api-level: 30
+          target: google_apis
+          arch: arm64-v8a
+          profile: pixel_6
           script: |
             adb logcat -c
             adb install app-debug.apk
