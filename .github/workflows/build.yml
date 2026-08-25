@@ -49,6 +49,10 @@ jobs:
           target: google_apis
           arch: arm64-v8a
           profile: pixel_6
+          force-avd-creation: true
+          emulator-boot-timeout: 900
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim
           script: |
             adb logcat -c
             adb install app-debug.apk
