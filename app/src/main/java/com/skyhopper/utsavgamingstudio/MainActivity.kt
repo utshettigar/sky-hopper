@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val LOCAL_HTML_PATH = "file:///android_asset/index.html"
-        private const val BANNER_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
-        private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
+        private val BANNER_AD_UNIT_ID = "ca-app-pub-8898717507085919/4095711539"
+        private val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-8898717507085919/5456894666"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
